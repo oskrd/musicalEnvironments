@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('app.routes', ['ionicUIRouter'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -10,55 +10,50 @@ angular.module('app.routes', [])
     
   
 
-      .state('funciones.salaDeClasicos', {
-    url: '/clasicos',
+      .state('tabsController.playlist', {
+    url: '/page2',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/salaDeClasicos.html',
-        controller: 'salaDeClasicosCtrl'
+      'tab1': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'playlistCtrl'
       }
     }
   })
 
-  .state('funciones.salaBailables', {
-    url: '/bailables',
+  /* 
+    The IonicUIRouter.js UI-Router Modification is being used for this route.
+    To navigate to this route, do NOT use a URL. Instead use one of the following:
+      1) Using the ui-sref HTML attribute:
+        ui-sref='tabsController.mP3Player'
+      2) Using $state.go programatically:
+        $state.go('tabsController.mP3Player');
+    This allows your app to figure out which Tab to open this page in on the fly.
+    If you're setting a Tabs default page or modifying the .otherwise for your app and
+    must use a URL, use one of the following:
+      /page1/tab1/page3
+      /page1/tab2/page3
+  */
+  .state('tabsController.mP3Player', {
+    url: '/page3',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/salaBailables.html',
-        controller: 'salaBailablesCtrl'
+      'tab1': {
+        templateUrl: 'templates/mP3Player.html',
+        controller: 'mP3PlayerCtrl'
+      },
+      'tab2': {
+        templateUrl: 'templates/mP3Player.html',
+        controller: 'mP3PlayerCtrl'
       }
     }
   })
 
-  .state('funciones.salaElectronica', {
-    url: '/electro',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/salaElectronica.html',
-        controller: 'salaElectronicaCtrl'
-      }
-    }
+  .state('tabsController', {
+    url: '/page1',
+    templateUrl: 'templates/tabsController.html',
+    abstract:true
   })
 
-  .state('funciones', {
-    url: '/side_menu',
-    templateUrl: 'templates/funciones.html',
-    controller: 'funcionesCtrl'
-  })
-
-  .state('musicEnvironment', {
-    url: '/login',
-    templateUrl: 'templates/musicEnvironment.html',
-    controller: 'musicEnvironmentCtrl'
-  })
-
-  .state('musicEnvironment2', {
-    url: '/signup',
-    templateUrl: 'templates/musicEnvironment2.html',
-    controller: 'musicEnvironment2Ctrl'
-  })
-
-$urlRouterProvider.otherwise('/login')
+$urlRouterProvider.otherwise('/page1/page2')
 
   
 

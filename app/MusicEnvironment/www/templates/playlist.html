@@ -1,0 +1,19 @@
+<ion-view title="Playlist" hide-nav-bar="true" hide-back-button="true" id="page2" style="">
+  <ion-content padding="false" style="background: url(img/uIgNDCAQl68P8Z3Zz8wI_scratches-wallpaper-960x640.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <h1 id="playlist-heading2" style="color: rgb(237, 226, 226); text-align: center;">Playlist</h1>
+  
+		<div class="item item-body" id="playlist-list-item-container1" style="">
+	<ion-scroll scrollX="true" scrollY="true">  
+		<ion-checkbox id="playlist-list" ng-repeat="element in canciones track by element" ng-model ="state" ng-click="sendId($index, $id, this)">
+			{{element}}
+		</ion-checkbox>
+	  </ion-scroll>
+	    </div>
+
+    <div class="spacer" style="width: 300px; height: 96px;"></div>
+    <div id="playlist-button-bar3" class="button-bar">
+      <button id="playlist-button27" ng-click="setlist()" style="color: rgb(215, 52, 52)" class="button button-stable  button-block icon ion-refresh"></button>
+      <a ui-sref="tabsController.mP3Player" ng-click="sendList()" id="playlist-button29" class="button button-assertive  button-block icon ion-ios-play"></a>
+    </div>
+  </ion-content>
+</ion-view>

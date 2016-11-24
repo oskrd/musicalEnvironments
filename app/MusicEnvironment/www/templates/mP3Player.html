@@ -1,0 +1,25 @@
+<ion-view title="MP3 Player" hide-nav-bar="true" hide-back-button="true" id="page3" class="background-color:black" style="">
+  <ion-content padding="true" style="background: rgb(0,0,0) no-repeat center;background-size:cover;" class=" manual-remove-top-padding" scroll="false">
+    <h2 id="nameSong" style="color: rgb(235, 235, 235); text-align: center;">{{song.Nombre}}</h2>
+    <div>
+      <img src="img/2Uby5bfFSGqVG9Y6lyIm_concert-wallpaper-800x600.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+    </div>
+    <div id="mP3Player-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#F7F7F7;">Duration: {{song.Duracion}}</p>
+    </div>
+    <div id="mP3Player-button-bar1" class="button-bar">
+      <button id="buttonprev" ng-click="prev()" class="button button-royal  button-block icon ion-ios-skipbackward"></button>
+      <button id="buttonstop" ng-click="stop()" class="button button-royal button-small button-block icon ion-stop"></button>
+      <button id="buttonplay" ng-click="play()" style="border-radius:-44px -44px -44px -44px;" class="button button-royal button-large button-block icon ion-play"></button>
+      <button id="buttonpause" ng-click="pause()" class="button button-royal button-small button-block icon ion-ios-pause"></button>
+      <button id="buttonnext" ng-click="next()" class="button button-royal  button-block icon ion-ios-skipforward"></button>
+    </div>
+    <div id="mP3Player-button-bar2" class="button-bar">
+      <button id="buttonmete" ng-click="mute()" class="button button-positive  button-block icon ion-android-volume-mute"></button>
+      <button id="buttonvol-" ng-click="volm()" class="button button-positive  button-block icon ion-android-volume-down"></button>
+      <button id="buttonvol+" ng-click="volp()" class="button button-positive  button-block icon ion-android-volume-up"></button>
+      <button id="buttonrandom" ng-click="randomize()" class="button button-positive  button-block icon ion-shuffle"></button>
+    </div>
+    <div class="spacer" style="width: 310px; height: 17px;"></div>
+  </ion-content>
+</ion-view>
